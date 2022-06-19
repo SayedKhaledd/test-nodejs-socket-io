@@ -1,7 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const dbRoute = require("./routes/login_signup_route.js");
 //const dbRoute = require("./routes/login_signup_route");
 
 const app = express();
@@ -18,7 +17,7 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use("/", dbRoute);
+
 app.get("/", (req, res) => {
   res.send("server is running");
 });
