@@ -11,8 +11,9 @@ app.get("/", (req, res) => {
  
 io.on("connection", (socket) => {
   console.log(socket.id);
+  socket.emit("my-event",1)
+
 });
-io.emit("my-event",1);
 server.listen(process.env.PORT || 3000, () => {
   console.log("listening on *:3000");
 });
