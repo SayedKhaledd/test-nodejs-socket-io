@@ -9,7 +9,7 @@ app.get("/", (req, res) => {
   res.send("hello");
 });
  
-io.on("connection", (socket) => {
+io.on("connect", (socket) => {
   console.log(socket.id);
 });
 
