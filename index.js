@@ -9,10 +9,10 @@ app.get("/", (req, res) => {
   res.send("hello");
 });
  
-io.on("connect", (socket) => {
+io.on("connection", (socket) => {
   console.log(socket.id);
 });
-
+io.emit("my-event",1);
 server.listen(process.env.PORT || 3000, () => {
   console.log("listening on *:3000");
 });
